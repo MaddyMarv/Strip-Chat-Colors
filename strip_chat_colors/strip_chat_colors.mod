@@ -4,7 +4,7 @@ return {
 	description = "Strip Chat Colors",
 	version = "1.0",
 	run = function()
-		fassert(rawget(_G, "new_mod"), "strip_chat_colors must be lower than Vermintide Mod Framework in your launcher's load order.")
+		fassert(rawget(_G, "new_mod"), "`strip_chat_colors` encountered an error loading the Darktide Mod Framework.")
 
 		new_mod("strip_chat_colors", {
 			mod_script       = "strip_chat_colors/scripts/mods/strip_chat_colors/strip_chat_colors",
