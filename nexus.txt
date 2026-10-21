@@ -1,13 +1,14 @@
 Strips custom colors, font sizes, and rainbow text formatting from chat messages while keeping mod notifications and vanilla game pings intact.
 
-[b]Options:[/b]
-
+[b]Mod Settings / Commands:[/b]
+[spoiler]
 [b]General[/b]
 - Strip Custom Colors
 - Strip Custom Fonts
 - Strip Custom Sizes
 - Strip Text Decorations (Underline & Strikethrough)
 - Force All Lowercase
+[/spoiler]
 
 [b]Links:[/b]
 [url=https://github.com/MaddyMarv/strip-chat-colors]Source Code[/url] | [url=https://www.nexusmods.com/profile/indicabunny]Nexus Mods Profile[/url] | [url=https://ko-fi.com/indicabunny]Support Me on Ko-fi[/url]
