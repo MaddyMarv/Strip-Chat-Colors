@@ -7,39 +7,48 @@ mod:hook("ChatManager", "_handle_event", function(func, self, message)
 	return func(self, message)
 end)
 
-mod:hook("ConstantElementChat", "cb_chat_manager_message_recieved", function(func, self, channel_handle, participant, message)
-	if message and type(message.message_body) == "string" and not message._is_game_message then
-		local new_body = message.message_body
+mod:hook(
+	"ConstantElementChat",
+	"cb_chat_manager_message_recieved",
+	function(func, self, channel_handle, participant, message)
+		if message and type(message.message_body) == "string" and not message._is_game_message then
+			local new_body = message.message_body
 
-		if mod:get("strip_colors") then
-			new_body = string.gsub(new_body, "{#color%(.-%)}", "")
+			if mod:get("strip_colors") then
+				new_body = string.gsub(new_body, "{#color%(.-%)}", "")
+			end
+
+			if mod:get("strip_fonts") then
+				new_body = string.gsub(new_body, "{#font%(.-%)}", "")
+			end
+
+			if mod:get("strip_sizes") then
+				new_body = string.gsub(new_body, "{#size%(.-%)}", "")
+			end
+
+			if mod:get("strip_decorations") then
+				new_body = string.gsub(new_body, "{#under%(.-%)}", "")
+				new_body = string.gsub(new_body, "{#strike%(.-%)}", "")
+			end
+
+			if
+				mod:get("strip_colors")
+				or mod:get("strip_fonts")
+				or mod:get("strip_sizes")
+				or mod:get("strip_decorations")
+			then
+				new_body = string.gsub(new_body, "{#reset%(%)}", "")
+			end
+
+			if mod:get("force_lowercase") then
+				new_body = string.lower(new_body)
+			end
+
+			local new_message = table.clone(message)
+			new_message.message_body = new_body
+			return func(self, channel_handle, participant, new_message)
 		end
 
-		if mod:get("strip_fonts") then
-			new_body = string.gsub(new_body, "{#font%(.-%)}", "")
-		end
-
-		if mod:get("strip_sizes") then
-			new_body = string.gsub(new_body, "{#size%(.-%)}", "")
-		end
-
-		if mod:get("strip_decorations") then
-			new_body = string.gsub(new_body, "{#under%(.-%)}", "")
-			new_body = string.gsub(new_body, "{#strike%(.-%)}", "")
-		end
-
-		if mod:get("strip_colors") or mod:get("strip_fonts") or mod:get("strip_sizes") or mod:get("strip_decorations") then
-			new_body = string.gsub(new_body, "{#reset%(%)}", "")
-		end
-
-		if mod:get("force_lowercase") then
-			new_body = string.lower(new_body)
-		end
-
-		local new_message = table.clone(message)
-		new_message.message_body = new_body
-		return func(self, channel_handle, participant, new_message)
+		return func(self, channel_handle, participant, message)
 	end
-
-	return func(self, channel_handle, participant, message)
-end)
+)

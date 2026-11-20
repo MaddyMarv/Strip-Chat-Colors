@@ -35,9 +35,9 @@ return {
 						setting_id = "force_lowercase",
 						type = "checkbox",
 						default_value = false,
-					}
-				}
-			}
-		}
-	}
+					},
+				},
+			},
+		},
+	},
 }
