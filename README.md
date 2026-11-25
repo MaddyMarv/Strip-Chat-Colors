@@ -14,4 +14,4 @@ Strips custom colors, font sizes, and rainbow text formatting from chat messages
 - Force All Lowercase
 </details>
 
-🔗 **Links:** [Source Code](https://github.com/MaddyMarv/strip-chat-colors) | [Nexus Mods Profile](https://www.nexusmods.com/profile/indicabunny) | [Support Me on Ko-fi](https://ko-fi.com/indicabunny)
+🔗 **Links:** [Source Code](https://github.com/MaddyMarv/Strip-Chat-Colors) | [Nexus Mods Profile](https://www.nexusmods.com/profile/indicabunny) | [Support Me on Ko-fi](https://ko-fi.com/indicabunny)
