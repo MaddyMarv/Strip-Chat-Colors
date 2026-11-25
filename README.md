@@ -10,7 +10,7 @@ Strips custom colors, font sizes, and rainbow text formatting from chat messages
 - Strip Custom Colors
 - Strip Custom Fonts
 - Strip Custom Sizes
-- Strip Text Decorations (Underline & Strikethrough)
+- Strip Underline & Strikethrough
 - Force All Lowercase
 </details>
 

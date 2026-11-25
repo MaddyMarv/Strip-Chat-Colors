@@ -1,8 +1,4 @@
 return {
-	dir = "strip_chat_colors",
-	name = "strip_chat_colors",
-	description = "Strip Chat Colors",
-	version = "1.0",
 	run = function()
 		fassert(rawget(_G, "new_mod"), "`strip_chat_colors` encountered an error loading the Darktide Mod Framework.")
 
